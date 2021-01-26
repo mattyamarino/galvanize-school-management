@@ -39,4 +39,9 @@ public class School {
         courses.remove(courseToRemove);
         return courses;
     }
+
+    public Course generateCourse(Instructor instructor, List<Student> students) {
+        Course course = new Course(instructor, students);
+        return addCourse(course);
+    }
 }

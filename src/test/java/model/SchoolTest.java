@@ -74,4 +74,15 @@ public class SchoolTest{
         List<Course> result = school.removeCourse(course2);
         assertEquals(expected, result);
     }
+
+    @Test
+    public void generateCourse_addsFieldsToCourse_andCallsAddCourse() {
+        Instructor instructor = new Instructor();
+        Student student1 = new Student();
+        Student student2 = new Student();
+        List<Student> students = Arrays.asList(student1, student2);
+        Course result = school.generateCourse(instructor, students);
+        Course expected = new Course(instructor, students);
+        assertEquals(expected, result);
+    }
 }

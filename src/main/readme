@@ -19,13 +19,13 @@ Given there is a school , When we add a new Course,
 Then I should be able to see the new add course.----------
 ​
 Given there is a school, When we remove a course,
-Then I should be able to see the list of courses excluding the removed course.
+Then I should be able to see the list of courses excluding the removed course.---------
 ​
 Given a Course add to be taught at the school,
-Then I should be able to assign it to one of the available instructors.
+Then I should be able to assign it to one of the available instructors.----------
 ​
 Given a Course add to be taught at the school,
-Then I should be able to see Student enrolls in that course.
+Then I should be able to see Student enrolls in that course.-------------
 ​
 Given courses assigned to Instructor,
 Then I should be able to see a list of courses taught by Instructor.
