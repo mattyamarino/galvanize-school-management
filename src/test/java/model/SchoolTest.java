@@ -4,6 +4,7 @@ package model;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -81,8 +82,88 @@ public class SchoolTest{
         Student student1 = new Student();
         Student student2 = new Student();
         List<Student> students = Arrays.asList(student1, student2);
-        Course result = school.generateCourse(instructor, students);
-        Course expected = new Course(instructor, students);
+        Course result = school.generateCourse("mockCourse", instructor, students);
+        Course expected = new Course("mockCourse", instructor, students);
         assertEquals(expected, result);
     }
+
+    @Test
+    public void getCoursesForInstructor_returnsListOfCoursesInstructorTeaches() {
+        Instructor instructor1 = new Instructor(1);
+        Instructor instructor2 = new Instructor(2);
+        List<Student> students = new ArrayList<>();
+        Course course1 = school.generateCourse("mockCourse1", instructor1, students);
+        Course course2 = school.generateCourse("mockCourse2", instructor1, students);
+        school.generateCourse("mockCourse3", instructor2, students);
+        List<Course> expected = Arrays.asList(course1, course2);
+        List<Course> result = school.getCoursesForInstructor(1);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void getsStudentsForCourse_returnsEmptyList_ifNoStudentsInCourse() {
+        Instructor instructor1 = new Instructor(1);
+        List<Student> students = new ArrayList<>();
+        Course course1 = school.generateCourse("mockCourse", instructor1, students);
+        school.courses.add(course1);
+        List<Student> expected = new ArrayList<>();
+        List<Student> result = school.getStudentsForCourse("mockCourse");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void getsStudentsForCourse_returnsListOfStudentsInCourse() {
+        Instructor instructor1 = new Instructor(1);
+        List<Student> students = new ArrayList<>();
+        Student student = new Student();
+        students.add(student);
+        Course course1 = school.generateCourse("mockCourse", instructor1, students);
+        school.courses.add(course1);
+        List<Student> expected = Collections.singletonList(student);
+        List<Student> result = school.getStudentsForCourse("mockCourse");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void getCoursesForStudent_returnsListOfCoursesForWhichSelectedStudentIsEnrolled() {
+        Instructor instructor1 = new Instructor(1);
+        List<Student> students1 = new ArrayList<>();
+        List<Student> students2 = new ArrayList<>();
+        Student student1 =  new Student(1);
+        students1.add(student1);
+        Student student2 =  new Student(2);
+        students2.add(student2);
+        Course course1 = school.generateCourse("mockCourse1", instructor1, students1);
+        school.generateCourse("mockCourse2", instructor1, students2);
+        Course course3 = school.generateCourse("mockCourse3", instructor1, students1);
+        List<Course> expected = Arrays.asList(course1, course3);
+        List<Course> result = school.getCoursesForStudent(1);
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void removeOverCommitedStudents_removesStudentsEnrolledInFiveOrMoreCoursesFromList() {
+        List<Student> students1 = new ArrayList<>();
+        List<Student> students2 = new ArrayList<>();
+        List<Student> students3 = new ArrayList<>();
+        Student student1 =  new Student(1);
+        Student student2 =  new Student(2);
+        students1.add(student1);
+        students2.add(student2);
+        students3.add(student1);
+        students3.add(student2);
+        Instructor instructor1 = new Instructor(1);
+        school.generateCourse("mockCourse1", instructor1, students1);
+        school.generateCourse("mockCourse2", instructor1, students1);
+        school.generateCourse("mockCourse3", instructor1, students1);
+        school.generateCourse("mockCourse4", instructor1, students1);
+        school.generateCourse("mockCourse5", instructor1, students1);
+        school.generateCourse("mockCourse6", instructor1, students2);
+
+        List<Student> expected = Collections.singletonList(student2);
+        List<Student> result = school.removeOverCommitedStudents(students3);
+        assertEquals(expected, result);
+    }
+
+
 }

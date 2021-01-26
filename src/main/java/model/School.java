@@ -40,8 +40,56 @@ public class School {
         return courses;
     }
 
-    public Course generateCourse(Instructor instructor, List<Student> students) {
-        Course course = new Course(instructor, students);
+    public Course generateCourse(String name, Instructor instructor, List<Student> students) {
+        Course course = new Course(name, instructor, students);
         return addCourse(course);
+    }
+
+    public List<Course> getCoursesForInstructor(int instructorId) {
+        List<Course> coursesForInstructor = new ArrayList<>();
+
+        for(Course course: courses) {
+            if(instructorId == course.getInstructor().getId()) {
+                coursesForInstructor.add(course);
+            }
+        }
+
+        return coursesForInstructor;
+    }
+
+    public List<Student> getStudentsForCourse(String mockCourse) {
+        List<Student> students = new ArrayList<>();
+        for(Course course: courses) {
+            if(mockCourse == course.getName()) {
+                students = course.getStudents();
+            }
+        }
+        return students;
+    }
+
+    public List<Course> getCoursesForStudent(int studentId) {
+        List<Course> coursesForStudent= new ArrayList<>();
+
+        for(Course course: courses) {
+            for(Student student: course.getStudents()) {
+                if(studentId == student.getId()) {
+                    coursesForStudent.add(course);
+                }
+            }
+        }
+
+        return coursesForStudent;
+    }
+
+    public List<Student> removeOverCommitedStudents(List<Student> studentsToEnroll) {
+        List<Student> eligibleStudents = new ArrayList<>();
+
+        for(Student student: studentsToEnroll) {
+            int numberOfCoursesEnrolled =  getCoursesForStudent(student.getId()).size();
+            if(numberOfCoursesEnrolled < 5) {
+                eligibleStudents.add(student);
+            }
+        }
+        return eligibleStudents;
     }
 }

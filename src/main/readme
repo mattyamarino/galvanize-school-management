@@ -28,14 +28,14 @@ Given a Course add to be taught at the school,
 Then I should be able to see Student enrolls in that course.-------------
 ​
 Given courses assigned to Instructor,
-Then I should be able to see a list of courses taught by Instructor.
+Then I should be able to see a list of courses taught by Instructor.------
 ​
 Given: there are no students enrolled in the course When : I check the school management system(CMS)  Then : I should see it as empty
 Given students enrolled in a course
-Then I should be able to see a list of enrolled student in that particular course.
+Then I should be able to see a list of enrolled student in that particular course.------------
 ​
 Given a student enrolled in one or more courses
-Then I should see a list of courses he/she enrolled in.
+Then I should see a list of courses he/she enrolled in.--------
 ​
 Given a student enrolled in 5 courses,
 Then the student cannot enroll in more courses. I should see a message ”You cannot enroll in new courses, Maximum enrollment 5 courses”
