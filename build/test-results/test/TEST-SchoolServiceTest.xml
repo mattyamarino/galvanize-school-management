@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SchoolServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-01-26T19:25:52" hostname="LTUS120094" time="0.002">
-  <properties/>
-  <testcase name="addSchool_returnsAddedSchool_andAddsItToList" classname="SchoolServiceTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

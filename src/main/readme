@@ -4,19 +4,19 @@ When I add a school,
 Then I should be able to see it. -------------
 ​
 Given there is a school , When we hire a new instructor,
-Then I should be able to see the new added instructor.
+Then I should be able to see the new added instructor.---------
 ​
 Given there is a school, When we fire an instructor,
-Then I should be able to see the list of instructors excluding the fired instructor.
+Then I should be able to see the list of instructors excluding the fired instructor.---------
 ​
 Given there is a school , When we hire a new student,
-Then I should be able to see the new add student.
+Then I should be able to see the new add student.---------
 ​
 Given there is a school, When we unenroll a student,
-Then I should be able to see the list of students excluding the unenrolled student.
+Then I should be able to see the list of students excluding the unenrolled student.-----------
 ​
 Given there is a school , When we add a new Course,
-Then I should be able to see the new add course.
+Then I should be able to see the new add course.----------
 ​
 Given there is a school, When we remove a course,
 Then I should be able to see the list of courses excluding the removed course.
