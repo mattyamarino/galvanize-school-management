@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="model.SchoolTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-01-26T21:49:20" hostname="LTUS120094" time="0.004">
+<testsuite name="model.SchoolTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-01-26T22:05:45" hostname="LTUS120094" time="0.013">
   <properties/>
-  <testcase name="removeOverCommitedStudents_removesStudentsEnrolledInFiveOrMoreCoursesFromList" classname="model.SchoolTest" time="0.004"/>
+  <testcase name="getsStudentsForCourse_returnsListOfStudentsInCourse" classname="model.SchoolTest" time="0.008"/>
+  <testcase name="removeCourse_removesCourseFromList_andReturnsList" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="getCoursesForInstructor_returnsListOfCoursesInstructorTeaches" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="addInstructor_addsInstructorToSchool" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="removeStudent_removesStudentFromList_andReturnsList" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="getCoursesForStudent_returnsListOfCoursesForWhichSelectedStudentIsEnrolled" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="addStudent_addsStudentToSchool" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="getsStudentsForCourse_returnsEmptyList_ifNoStudentsInCourse" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="removeOverCommitedStudents_removesStudentsEnrolledInFiveOrMoreCoursesFromList" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="addCourse_addsCourseToSchool" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="terminateInstructor_removesInstructorFromList_andReturnsList" classname="model.SchoolTest" time="0.0"/>
+  <testcase name="generateCourse_addsFieldsToCourse_andCallsAddCourse" classname="model.SchoolTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

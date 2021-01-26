@@ -57,10 +57,10 @@ public class School {
         return coursesForInstructor;
     }
 
-    public List<Student> getStudentsForCourse(String mockCourse) {
+    public List<Student> getStudentsForCourse(String courseName) {
         List<Student> students = new ArrayList<>();
         for(Course course: courses) {
-            if(mockCourse == course.getName()) {
+            if(courseName == course.getName()) {
                 students = course.getStudents();
             }
         }
