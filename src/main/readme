@@ -1,0 +1,47 @@
+School Management System
+​
+When I add a school,
+Then I should be able to see it. -------------
+​
+Given there is a school , When we hire a new instructor,
+Then I should be able to see the new added instructor.
+​
+Given there is a school, When we fire an instructor,
+Then I should be able to see the list of instructors excluding the fired instructor.
+​
+Given there is a school , When we hire a new student,
+Then I should be able to see the new add student.
+​
+Given there is a school, When we unenroll a student,
+Then I should be able to see the list of students excluding the unenrolled student.
+​
+Given there is a school , When we add a new Course,
+Then I should be able to see the new add course.
+​
+Given there is a school, When we remove a course,
+Then I should be able to see the list of courses excluding the removed course.
+​
+Given a Course add to be taught at the school,
+Then I should be able to assign it to one of the available instructors.
+​
+Given a Course add to be taught at the school,
+Then I should be able to see Student enrolls in that course.
+​
+Given courses assigned to Instructor,
+Then I should be able to see a list of courses taught by Instructor.
+​
+Given: there are no students enrolled in the course When : I check the school management system(CMS)  Then : I should see it as empty
+Given students enrolled in a course
+Then I should be able to see a list of enrolled student in that particular course.
+​
+Given a student enrolled in one or more courses
+Then I should see a list of courses he/she enrolled in.
+​
+Given a student enrolled in 5 courses,
+Then the student cannot enroll in more courses. I should see a message ”You cannot enroll in new courses, Maximum enrollment 5 courses”
+​
+Given a Student enrolled in a course,
+A course fees should be added to his tuition. I should be able to see the total tuition for his courses enrolled.
+​
+Given a Student dropped a course,
+A course fees should be deducted from his tuition. I should be able to see the total tuition for his courses enrolled.
